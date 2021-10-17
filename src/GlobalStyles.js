@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     *::before,
     *::after {
         box-sizing: border-box;
+        font-size: 16px;
     }
 
     :root {
@@ -14,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
         /* Fonts  */
         --ff-primary: 'Spartan', sans-serif;
-        --fs-numbers: 32px;
+        --fs-numbers: 2rem;
         --fw-regular: 400;
         --fw-bold: 700;
 
@@ -67,7 +68,7 @@ const GlobalStyles = createGlobalStyle`
 
         /* Shapes  */
         --radius-25: 25px;
-        --radius-corner-small: 3.6px;
+        --radius-corner-small: 10px;
     }
 
     body {

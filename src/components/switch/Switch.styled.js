@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const StyledSwitch = styled.div`
+    font-size: .8rem;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-columns: 3fr 1fr; */
+    /* grid-template-rows: 1fr 1fr; */
     grid-template-areas:
         "theme numbers"
         "theme switch";
@@ -13,18 +14,19 @@ export const StyledThemeText = styled.div`
     grid-area: theme;
     align-self: end;
     justify-self: end;
-    margin-right: 1em;
+    margin-right: 1.5em;
+    font-size: .8rem;
 `;
 
 export const StyledThemeNumbers = styled.div`
     grid-area: numbers;
     display: flex;
-    padding: 0 1em;
     justify-content: space-around;
     align-items: center;
 
     div {
-        padding: 0 .4em;
+        padding: 0 .5em;
+        font-size: .8rem;
     }
 `;
 
@@ -32,9 +34,10 @@ export const StyledThemeNumbers = styled.div`
 export const StyledSwitchLabel = styled.label`
     grid-area: switch;
     position: relative;
-    display: inline-block;
-    width: 78%;
+    /* display: inline-block; */
     height: 25px;
+    margin-left: -1em;
+    margin-right: .5em;
 `;
 
 export const StyledSwitchInput = styled.input`

@@ -31,7 +31,7 @@ export const lightTheme = {
         text2: "var(--color-lt-text-2)",
     },
     mobile: "768px",
-    translateX: "20px",
+    translateX: "22px",
 };
 
 export const purpleTheme = {
@@ -50,5 +50,5 @@ export const purpleTheme = {
         text3: "var(--color-purple-text-3)",
     },
     mobile: "768px",
-    translateX: "42px",
+    translateX: "45px",
 };

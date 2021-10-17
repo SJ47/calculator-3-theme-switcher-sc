@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Header from "../components/header/Header";
+import Result from "../components/result/Result";
 import { StyledContainer } from "./CalculatorContainer.styled";
 import { darkTheme, lightTheme, purpleTheme } from "./MyThemes";
 
@@ -21,6 +22,7 @@ const CalculatorContainer = () => {
         <ThemeProvider theme={theme}>
             <StyledContainer>
                 <Header handleThemeSwitch={handleThemeSwitch} />
+                <Result />
                 <div>REST OF PAGE</div>
             </StyledContainer>
         </ThemeProvider>

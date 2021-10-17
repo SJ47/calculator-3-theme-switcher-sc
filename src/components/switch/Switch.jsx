@@ -1,21 +1,28 @@
 import React from "react";
-import { StyledSwitch } from "./Switch.styled";
+import {
+    StyledSwitch,
+    StyledThemeText,
+    StyledThemeNumbers,
+    StyledSwitchLabel,
+    StyledSwitchInput,
+    StyledSlider,
+} from "./Switch.styled";
 
 const Switch = ({ handleThemeSwitch }) => {
     return (
         <StyledSwitch>
-            <div className="theme-text">THEME</div>
+            <StyledThemeText>THEME</StyledThemeText>
 
-            <div className="numbers">
+            <StyledThemeNumbers>
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
-            </div>
+            </StyledThemeNumbers>
 
-            <label className="switch">
-                <input onClick={handleThemeSwitch} type="checkbox" />
-                <span className="slider round"></span>
-            </label>
+            <StyledSwitchLabel>
+                <StyledSwitchInput onClick={handleThemeSwitch} type="checkbox" />
+                <StyledSlider />
+            </StyledSwitchLabel>
         </StyledSwitch>
     );
 };

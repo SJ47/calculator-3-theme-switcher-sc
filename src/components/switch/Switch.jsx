@@ -16,12 +16,6 @@ const Switch = ({ handleThemeSwitch }) => {
                 <input onClick={handleThemeSwitch} type="checkbox" />
                 <span className="slider round"></span>
             </label>
-
-            {/* <div className="ball-container" onClick={handleThemeSwitch}>
-                <div className="ball">🔴</div>
-                <div className="ball">🔴</div>
-                <div className="ball">🔴</div>
-            </div> */}
         </StyledSwitch>
     );
 };

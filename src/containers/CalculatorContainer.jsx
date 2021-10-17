@@ -18,6 +18,7 @@ const darkTheme = {
         text2: "var(--color-dt-text-2)",
     },
     mobile: "768px",
+    translateX: "0px",
 };
 
 const lightTheme = {
@@ -35,6 +36,7 @@ const lightTheme = {
         text2: "var(--color-lt-text-2)",
     },
     mobile: "768px",
+    translateX: "20px",
 };
 
 const purpleTheme = {
@@ -53,19 +55,20 @@ const purpleTheme = {
         text3: "var(--color-purple-text-3)",
     },
     mobile: "768px",
+    translateX: "45px",
 };
 
 const CalculatorContainer = () => {
     const [theme, setTheme] = useState(darkTheme);
 
     const handleThemeSwitch = () => {
-        // setTheme(
-        //     theme === darkTheme
-        //         ? lightTheme
-        //         : theme === lightTheme
-        //         ? purpleTheme
-        //         : darkTheme
-        // );
+        setTheme(
+            theme === darkTheme
+                ? lightTheme
+                : theme === lightTheme
+                ? purpleTheme
+                : darkTheme
+        );
     };
 
     return (

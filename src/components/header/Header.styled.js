@@ -4,7 +4,7 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${(props => props.theme.colors.text2)};
+    color: ${(props => props.theme.colors.text1)};
     margin: 0 1em;
 `;
 
@@ -15,8 +15,7 @@ export const StyledLogo = styled.div`
 export const StyledSwitchContainer = styled.div`
     display: flex;
     justify-content: flex-end;
-/* 
-    div {
-        cursor: pointer;
-    } */
+    font-size: 14px;
+    letter-spacing: .1rem;
+
 `;

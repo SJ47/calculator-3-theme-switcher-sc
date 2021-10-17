@@ -6,19 +6,17 @@ export const StyledSwitch = styled.div`
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "theme numbers"
-        "theme ball";
+        "theme switch";
 
     .theme-text {
         grid-area: theme;
-        /* background: orange; */
         align-self: end;
         justify-self: end;
-        margin-right: .5em;
+        margin-right: 1em;
         
     }
 
     .numbers {
-        /* background: orange; */
         grid-area: numbers;
         display: flex;
         padding: 0 1em;
@@ -26,19 +24,17 @@ export const StyledSwitch = styled.div`
         align-items: center;
 
         div:nth-child(1),div:nth-child(2),div:nth-child(3) {
-            /* background: orange; */
             padding: 0 .4em;
         }
     }
 
     /* The switch - the box around the slider */
     .switch {
-        grid-area: ball;
+        grid-area: switch;
         position: relative;
         display: inline-block;
-        width: 80%;
-        height: 20px;
-        /* background: orange; */
+        width: 78%;
+        height: 25px;
     }
 
     /* Hide default HTML checkbox */
@@ -52,10 +48,10 @@ export const StyledSwitch = styled.div`
     .slider {
         position: absolute;
         cursor: pointer;
-        top: 10px;
+        top: 2px;
         left: 10px;
         right: -10px;
-        bottom: -10px;
+        bottom: -2px;
         background: ${(props) => props.theme.colors.bgToggle};
         -webkit-transition: 0.4s;
         transition: 0.4s;
@@ -65,18 +61,18 @@ export const StyledSwitch = styled.div`
     .slider:before {
         position: absolute;
         content: "";
-        height: 14px;
-        width: 14px;
-        left: 10px;
-        bottom: 3.5px;
-        background-color: red;
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 3.6px;
+        background: ${(props) => props.theme.colors.keyBg2};
         -webkit-transition: 0.4s;
         transition: 0.4s;
     }
 
-    input:checked + .slider {
+    /* input:checked + .slider {
         background: ${(props) => props.theme.colors.bgToggle};
-    }
+    } */
 
     input:focus + .slider {
         box-shadow: 0 0 1px #2196f3;
@@ -85,12 +81,11 @@ export const StyledSwitch = styled.div`
     input + .slider:before {
         -webkit-transform: translateX(${(props) => props.theme.translateX});
         -ms-transform: translateX(${(props) => props.theme.translateX});
-        /* transform: translateX(20px); */  // Original
         transform: translateX(${(props) => props.theme.translateX});
     }
 
     input:checked + .slider:before {
-        background-color: red;
+        background: ${(props) => props.theme.colors.keyBg2};
     }
 
     /* Rounded sliders */

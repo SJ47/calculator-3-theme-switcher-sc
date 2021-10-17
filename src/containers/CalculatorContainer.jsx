@@ -18,7 +18,7 @@ const darkTheme = {
         text2: "var(--color-dt-text-2)",
     },
     mobile: "768px",
-    translateX: "0px",
+    translateX: "2px",
 };
 
 const lightTheme = {
@@ -55,7 +55,7 @@ const purpleTheme = {
         text3: "var(--color-purple-text-3)",
     },
     mobile: "768px",
-    translateX: "45px",
+    translateX: "42px",
 };
 
 const CalculatorContainer = () => {

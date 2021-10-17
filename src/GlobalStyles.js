@@ -27,11 +27,11 @@ const GlobalStyles = createGlobalStyle`
         --color-dt-key-shadow-1: hsl(224, 28%, 35%);
         --color-dt-key-bg-2: hsl(6, 63%, 50%);
         --color-dt-key-shadow-2: hsl(6, 70%, 34%);
-        --color-dt-key-bg-2: hsl(30, 25%, 89%);
-        --color-dt-key-shadow-2: hsl(28, 16%, 65%);
+        --color-dt-key-bg-3: hsl(30, 25%, 89%);
+        --color-dt-key-shadow-3: hsl(28, 16%, 65%);
 
         --color-dt-text-1: hsl(221, 14%, 31%);
-        --color-dt-text-2: hsl(0, 0, 100%);
+        --color-dt-text-2: hsl(0, 0%, 100%);
 
         // Theme 2 - light
         --color-lt-main-bg: hsl(0, 0%, 90%);
@@ -42,11 +42,11 @@ const GlobalStyles = createGlobalStyle`
         --color-lt-key-shadow-1: hsl(185, 58%, 25%);
         --color-lt-key-bg-2: hsl(25, 98%, 40%);
         --color-lt-key-shadow-2: hsl(25, 99%, 27%);
-        --color-lt-key-bg-2: hsl(45, 7%, 89%);
-        --color-lt-key-shadow-2: hsl(35, 11%, 61%);
+        --color-lt-key-bg-3: hsl(45, 7%, 89%);
+        --color-lt-key-shadow-3: hsl(35, 11%, 61%);
 
         --color-lt-text-1: hsl(60, 10%, 19%);
-        --color-lt-text-2: hsl(0, 0, 100%);
+        --color-lt-text-2: hsl(0, 0%, 100%);
 
         // Theme 3 - purple
         --color-purple-main-bg: hsl(268, 75%, 9%);
@@ -57,15 +57,15 @@ const GlobalStyles = createGlobalStyle`
         --color-purple-key-shadow-1: hsl(285, 91%, 52%);
         --color-purple-key-bg-2: hsl(176, 100%, 44%);
         --color-purple-key-shadow-2: hsl(177, 92%, 70%);
-        --color-purple-key-bg-2: hsl(268, 47%, 21%);
-        --color-purple-key-shadow-2: hsl(290, 70%, 36%);
+        --color-purple-key-bg-3: hsl(268, 47%, 21%);
+        --color-purple-key-shadow-3: hsl(290, 70%, 36%);
 
         --color-purple-text-1: hsl(52, 100%, 62%);
-        --color-purple-text-2: hsl(198, 20%, 13%);
-        --color-purple-text-3: hsl(0, 0, 100%);
+        --color-purple-text-3: hsl(198, 20%, 13%);
+        --color-purple-text-2: hsl(0, 0%, 100%);
 
         /* Shapes  */
-        --radius-corner: 25px;
+        --radius-25: 25px;
         --radius-corner-small: 3.6px;
     }
 

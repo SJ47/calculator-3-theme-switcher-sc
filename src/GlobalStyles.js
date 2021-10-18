@@ -68,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
 
         /* Shapes  */
         --radius-25: 25px;
+        --radius-5: 5px;
         --radius-corner-small: 10px;
     }
 

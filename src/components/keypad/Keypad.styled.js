@@ -9,4 +9,13 @@ export const StyledKeypadContainer = styled.div`
     padding: 1.2em 0.7em;
     margin: .5em .5em;
     height: 100%;
+
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px 75px 75px;
+    gap: .7em;
+    text-align: center;
+
+    /* grid-template-areas:
+        "7 8 9 DEL"; */
 `;

@@ -6,8 +6,8 @@ import Result from "../components/result/Result";
 import { StyledContainer } from "./CalculatorContainer.styled";
 import { darkTheme, lightTheme, purpleTheme } from "./MyThemes";
 
-const handleKeyPress = () => {
-    console.log("Key pressed down");
+const handleKeyPress = (event) => {
+    console.log("Mouse click event: ", event.target.innerText);
 };
 
 const CalculatorContainer = () => {

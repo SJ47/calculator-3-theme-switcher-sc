@@ -83,7 +83,7 @@ const Keypad = ({ handleKeyPress }) => {
     const styledKeypadKeys = keypadKeys.map((keypadKey) => {
         return (
             <StyledKey
-                onMouseDown={handleKeyPress}
+                onClick={(event) => handleKeyPress(event)}
                 key={keypadKey.id}
                 keyValue={keypadKey.value}
                 span={keypadKey.span}

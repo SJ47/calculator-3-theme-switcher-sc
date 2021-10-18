@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledKey = styled.div`
+    cursor: pointer;
     // Set background colour for key
     background: ${(props) =>
         props.keyValue === "="
@@ -12,6 +13,7 @@ export const StyledKey = styled.div`
                 props.theme.colors.keyBg1
                 :
                 props.theme.colors.keyBg3
+
     };
 
     // Set text colour for key
@@ -57,6 +59,10 @@ export const StyledKey = styled.div`
                 :
                 props.theme.colors.keyShadow3
     };
+
+    &:active {
+        border-bottom: 0;
+    }
     
     border-radius: var(--radius-corner-small);
     grid-area: ${(props) => props.span && "5 / span 2"};

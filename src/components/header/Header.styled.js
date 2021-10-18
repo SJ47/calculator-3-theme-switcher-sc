@@ -4,7 +4,7 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${(props => props.theme.colors.text1)};
+    color: ${(props => props.theme.colors.textResult)};
     margin: 0 1em;
 `;
 

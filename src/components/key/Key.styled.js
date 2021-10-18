@@ -1,11 +1,55 @@
 import styled from "styled-components";
 
 export const StyledKey = styled.div`
-    background: ${(props) => props.theme.colors.keyBg3};
-    color: ${(props) => props.theme.colors.text2};
-    font-size: var(--fs-numbers);
-    border-radius: var(--radius-5);
-    padding-top: .7em;
-    grid-area: ${(props) => props.span && "5 / span 2"};
+    // Set background colour for key
+    background: ${(props) =>
+        props.keyValue === "="
+            ?
+            props.theme.colors.keyBg2
+            :
+            props.keyValue === "RESET" || props.keyValue === "DEL"
+                ?
+                props.theme.colors.keyBg1
+                :
+                props.theme.colors.keyBg3
+    };
 
+    // Set text colour for key
+    color: ${(props) =>
+        props.keyValue === "RESET" || props.keyValue === "DEL"
+            ?
+            props.theme.colors.textDelResetKey
+            :
+            props.keyValue === "="
+                ?
+                props.theme.colors.textEqualKey
+                :
+                props.theme.colors.textKey
+    };
+
+    // Set font size for key
+    font-size: ${(props) =>
+        props.keyValue === "=" || props.keyValue === "RESET" || props.keyValue === "DEL"
+            ?
+            "20px"
+            :
+            "var(--fs-numbers)"
+    };
+
+    // Set shadow colour for key
+    border-bottom: 4px solid ${(props) =>
+        props.keyValue === "="
+            ?
+            props.theme.colors.keyShadow2
+            :
+            props.keyValue === "RESET" || props.keyValue === "DEL"
+                ?
+                props.theme.colors.keyShadow1
+                :
+                props.theme.colors.keyShadow3
+    };
+    
+    border-radius: var(--radius-corner-small);
+    padding-top: .65em;
+    grid-area: ${(props) => props.span && "5 / span 2"};
 `;

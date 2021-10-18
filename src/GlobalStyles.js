@@ -31,8 +31,9 @@ const GlobalStyles = createGlobalStyle`
         --color-dt-key-bg-3: hsl(30, 25%, 89%);
         --color-dt-key-shadow-3: hsl(28, 16%, 65%);
 
-        --color-dt-text-1: hsl(0, 0%, 100%);
-        --color-dt-text-2: hsl(221, 14%, 31%);
+        --color-dt-text-1: hsl(0, 0%, 100%);  // white
+        --color-dt-text-2: hsl(221, 14%, 31%);  // dark blue
+        --color-dt-text-3: hsl(221, 14%, 31%);  // dark blue
         
 
         // Theme 2 - light
@@ -47,9 +48,10 @@ const GlobalStyles = createGlobalStyle`
         --color-lt-key-bg-3: hsl(45, 7%, 89%);
         --color-lt-key-shadow-3: hsl(35, 11%, 61%);
 
-        --color-lt-text-1: hsl(60, 10%, 19%);
-        --color-lt-text-2: hsl(0, 0%, 100%);
-
+        --color-lt-text-1: hsl(0, 0%, 100%);  // white
+        --color-lt-text-2: hsl(60, 10%, 19%);  // dark grey
+        --color-lt-text-3: hsl(60, 10%, 19%);  // dark grey
+        
         // Theme 3 - purple
         --color-purple-main-bg: hsl(268, 75%, 9%);
         --color-purple-toggle-bg: hsl(268, 71%, 12%);
@@ -63,8 +65,8 @@ const GlobalStyles = createGlobalStyle`
         --color-purple-key-shadow-3: hsl(290, 70%, 36%);
 
         --color-purple-text-1: hsl(52, 100%, 62%);
-        --color-purple-text-3: hsl(198, 20%, 13%);
         --color-purple-text-2: hsl(0, 0%, 100%);
+        --color-purple-text-3: hsl(198, 20%, 13%);
 
         /* Shapes  */
         --radius-25: 25px;

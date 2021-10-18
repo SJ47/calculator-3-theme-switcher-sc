@@ -83,7 +83,11 @@ const Keypad = () => {
     const styledKeypadKeys = keypadKeys.map((keypadKey) => {
         console.log(keypadKey.id);
         return (
-            <StyledKey key={keypadKey.id} span={keypadKey.span}>
+            <StyledKey
+                key={keypadKey.id}
+                keyValue={keypadKey.value}
+                span={keypadKey.span}
+            >
                 {keypadKey.value}
             </StyledKey>
         );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledResult = styled.div`
-    background: ${(props) => props.theme.colors.bgToggle};
+    background: ${(props) => props.theme.colors.bgScreen};
     color: ${(props => props.theme.colors.text1)};
     border-radius: var(--radius-corner-small);
     text-align: right;

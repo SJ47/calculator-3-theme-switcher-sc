@@ -36,6 +36,15 @@ export const StyledKey = styled.div`
             "var(--fs-numbers)"
     };
 
+    // Set padding size for text in special keys
+    padding-top: ${(props) =>
+        props.keyValue === "=" || props.keyValue === "RESET" || props.keyValue === "DEL"
+            ?
+            "1.3em"
+            :
+            ".65em"
+    };
+
     // Set shadow colour for key
     border-bottom: 4px solid ${(props) =>
         props.keyValue === "="
@@ -50,6 +59,6 @@ export const StyledKey = styled.div`
     };
     
     border-radius: var(--radius-corner-small);
-    padding-top: .65em;
+    /* padding-top: .65em; */
     grid-area: ${(props) => props.span && "5 / span 2"};
 `;

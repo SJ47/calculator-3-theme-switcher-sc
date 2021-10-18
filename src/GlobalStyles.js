@@ -77,6 +77,9 @@ const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
         @media (min-width: 776px) {
             background: orange;
 
@@ -88,8 +91,7 @@ const GlobalStyles = createGlobalStyle`
         min-width: var(--layout-mobile);
         margin: 0 auto;
         font-family: var(--ff-primary);
-        width: 450px;
-        padding-top: 0;
+        /* width: 450px; */
         font-weight: var(--fw-bold);
 
         @media (min-width: 776px) {

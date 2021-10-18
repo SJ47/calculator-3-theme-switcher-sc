@@ -6,6 +6,10 @@ import Result from "../components/result/Result";
 import { StyledContainer } from "./CalculatorContainer.styled";
 import { darkTheme, lightTheme, purpleTheme } from "./MyThemes";
 
+const handleKeyPress = () => {
+    console.log("Key pressed down");
+};
+
 const CalculatorContainer = () => {
     const [theme, setTheme] = useState(darkTheme);
 
@@ -24,7 +28,7 @@ const CalculatorContainer = () => {
             <StyledContainer>
                 <Header handleThemeSwitch={handleThemeSwitch} />
                 <Result />
-                <Keypad />
+                <Keypad handleKeyPress={handleKeyPress} />
             </StyledContainer>
         </ThemeProvider>
     );

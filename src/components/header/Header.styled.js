@@ -15,6 +15,5 @@ export const StyledLogo = styled.div`
 export const StyledSwitchContainer = styled.div`
     display: flex;
     justify-content: flex-end;
-    /* font-size: .5rem; */
-    letter-spacing: .1rem;
+    letter-spacing: .1em;
 `;

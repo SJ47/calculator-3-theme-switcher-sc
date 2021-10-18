@@ -59,6 +59,5 @@ export const StyledKey = styled.div`
     };
     
     border-radius: var(--radius-corner-small);
-    /* padding-top: .65em; */
     grid-area: ${(props) => props.span && "5 / span 2"};
 `;

@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const StyledSwitch = styled.div`
     font-size: .8rem;
     display: grid;
-    /* grid-template-columns: 3fr 1fr; */
-    /* grid-template-rows: 1fr 1fr; */
     grid-template-areas:
         "theme numbers"
         "theme switch";
@@ -34,7 +32,6 @@ export const StyledThemeNumbers = styled.div`
 export const StyledSwitchLabel = styled.label`
     grid-area: switch;
     position: relative;
-    /* display: inline-block; */
     height: 25px;
     margin-left: -1em;
     margin-right: .5em;

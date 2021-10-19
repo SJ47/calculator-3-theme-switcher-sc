@@ -8,4 +8,10 @@ export const StyledResult = styled.div`
     font-size: var(--fs-numbers);
     padding: 1em 0.7em;
     margin: 1em .5em .5em .5em;
+
+    @media (min-width: 776px) {
+        margin-bottom: .7em;
+        margin-top: .9em;
+        padding-right: 1em;
+    }
 `;

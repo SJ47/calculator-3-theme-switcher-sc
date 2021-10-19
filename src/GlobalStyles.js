@@ -80,23 +80,16 @@ const GlobalStyles = createGlobalStyle`
         display: grid;
         place-items: center;
         min-height: 100vh;
-        @media (min-width: 776px) {
-            background: orange;
 
+        @media (min-width: 776px) {
+            background: var(--color-dt-main-bg);
         }
     }
 
     #root {
-        background: var(--color-light-grayish-cyan);
         min-width: var(--layout-mobile);
-        margin: 0 auto;
         font-family: var(--ff-primary);
-        /* width: 450px; */
         font-weight: var(--fw-bold);
-
-        @media (min-width: 776px) {
-
-        }
     }
 `;
 

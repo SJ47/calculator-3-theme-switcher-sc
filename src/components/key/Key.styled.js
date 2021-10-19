@@ -66,4 +66,25 @@ export const StyledKey = styled.div`
     
     border-radius: var(--radius-corner-small);
     grid-area: ${(props) => props.span && "5 / span 2"};
+
+    @media (min-width: 776px) {
+        height: 75%;
+
+        // Set padding size for text in special keys
+        padding-top: ${(props) =>
+        props.keyValue === "=" || props.keyValue === "RESET" || props.keyValue === "DEL"
+            ?
+            "1.2em"
+            :
+            ".5em"
+    };
+            // Set font size for key
+        font-size: ${(props) =>
+        props.keyValue === "=" || props.keyValue === "RESET" || props.keyValue === "DEL"
+            ?
+            "16px"
+            :
+            "smaller"
+    };
+    }
 `;

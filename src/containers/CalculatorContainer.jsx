@@ -32,7 +32,9 @@ const CalculatorContainer = () => {
         } else if (buttonValue === "RESET") {
             setResult(handleResetKeyPressed());
         }
-        // console.log(result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        console.log(
+            result.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+        );
     };
 
     // Theme

@@ -5,7 +5,7 @@ const Result = ({ result }) => {
     return (
         <>
             {/* <StyledResult>{result}</StyledResult> */}
-            <StyledResult type="number" value={result} disabled></StyledResult>
+            <StyledResult type="text" value={result} disabled></StyledResult>
         </>
     );
 };

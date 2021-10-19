@@ -1,20 +1,22 @@
-// DEL key pressed
-export const handleDelKeyPressed = (result) => {
-    const newResult = result.slice(0, result.length - 1);
-    return newResult ? newResult : "0";
+function removeCommas(num) {
+    return num.replace(/,/g, '');
 }
+
 
 // RESET key pressed
 export const handleResetKeyPressed = () => {
     return "0";
 }
 
+// DEL key pressed
+export const handleDelKeyPressed = (result) => {
+    const updatedResult = result.slice(0, result.length - 1)
+    const updatedResultCommasRemoved = parseFloat(removeCommas(updatedResult));
+    return updatedResult ? updatedResultCommasRemoved.toLocaleString() : "0";
+}
+
 // Number key pressed
 export const handleNumberKeyPressed = (result, buttonValue) => {
-    const pattern = /\d/;
-    if (pattern.test(buttonValue)) {
-        return result !== "0" ? result + buttonValue : buttonValue
-    } else {
-        return "0";
-    }
+    const resultCommasRemoved = parseFloat(removeCommas(result) + buttonValue);
+    return resultCommasRemoved.toLocaleString();
 }

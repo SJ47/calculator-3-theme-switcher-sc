@@ -1,8 +1,13 @@
 import React from "react";
 import { StyledResult } from "./Result.styled";
 
-const Result = () => {
-    return <StyledResult>399,981</StyledResult>;
+const Result = ({ result }) => {
+    return (
+        <>
+            {/* <StyledResult>{result}</StyledResult> */}
+            <StyledResult type="number" value={result} disabled></StyledResult>
+        </>
+    );
 };
 
 export default Result;

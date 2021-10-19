@@ -2,7 +2,7 @@ import React from "react";
 import { StyledKey } from "../key/Key.styled";
 import { StyledKeypadContainer } from "./Keypad.styled";
 
-const Keypad = ({ handleKeyPress }) => {
+const Keypad = ({ handleButtonClick }) => {
     const keypadKeys = [
         {
             id: "7",
@@ -83,7 +83,7 @@ const Keypad = ({ handleKeyPress }) => {
     const styledKeypadKeys = keypadKeys.map((keypadKey) => {
         return (
             <StyledKey
-                onClick={(event) => handleKeyPress(event)}
+                onClick={(event) => handleButtonClick(event.target.innerHTML)}
                 key={keypadKey.id}
                 keyValue={keypadKey.value}
                 span={keypadKey.span}

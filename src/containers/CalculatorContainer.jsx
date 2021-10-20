@@ -26,19 +26,19 @@ const CalculatorContainer = () => {
 
     // calculator functions
     const handleButtonClick = (buttonValue) => {
-        console.log("Button value: ", buttonValue);
         if (buttonValue >= 0 && buttonValue <= 9) {
             setResult(handleNumberKeyPressed(result, buttonValue));
-        } else if (buttonValue === "DEL") {
+        } else if (buttonValue === "DEL" || buttonValue === "Backspace") {
             setResult(handleDelKeyPressed(result));
         } else if (buttonValue === "RESET") {
             setResult(handleResetKeyPressed());
         } else if (buttonValue === ".") {
             setResult(handlePeriodKeyPressed(result));
         }
-        console.log(
-            result.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
-        );
+    };
+
+    const handleKeyPress = (keyValue) => {
+        handleButtonClick(keyValue);
     };
 
     // Theme
@@ -62,8 +62,11 @@ const CalculatorContainer = () => {
         <ThemeProvider theme={theme}>
             <StyledContainer>
                 <Header handleThemeSwitch={handleThemeSwitch} />
-                <Result result={result} />
-                <Keypad handleButtonClick={handleButtonClick} />
+                <Result result={result} handleKeyPress={handleKeyPress} />
+                <Keypad
+                    handleButtonClick={handleButtonClick}
+                    handleKeyPress={handleKeyPress}
+                />
             </StyledContainer>
         </ThemeProvider>
     );

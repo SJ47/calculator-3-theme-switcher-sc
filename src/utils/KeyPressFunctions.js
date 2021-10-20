@@ -2,7 +2,6 @@ function removeCommas(num) {
     return num.replace(/,/g, '');
 }
 
-
 // RESET key pressed
 export const handleResetKeyPressed = () => {
     return "0";
@@ -17,6 +16,15 @@ export const handleDelKeyPressed = (result) => {
 
 // Number key pressed
 export const handleNumberKeyPressed = (result, buttonValue) => {
-    const resultCommasRemoved = parseFloat(removeCommas(result) + buttonValue);
-    return resultCommasRemoved.toLocaleString();
+    if (result.includes(".")) {
+        return result + buttonValue;   // If there is a decimal point already no need to worry about commas
+    } else {
+        const resultCommasRemoved = parseFloat(removeCommas(result) + buttonValue);
+        return resultCommasRemoved.toLocaleString();
+    }
+}
+
+// Period . key pressed - add period unless result already has a period in the number
+export const handlePeriodKeyPressed = (result) => {
+    return result.includes(".") ? result : result + ".";
 }

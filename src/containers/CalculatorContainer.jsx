@@ -9,6 +9,7 @@ import {
     handleDelKeyPressed,
     handleResetKeyPressed,
     handleNumberKeyPressed,
+    handlePeriodKeyPressed,
 } from "../utils/KeyPressFunctions";
 
 const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -25,12 +26,15 @@ const CalculatorContainer = () => {
 
     // calculator functions
     const handleButtonClick = (buttonValue) => {
+        console.log("Button value: ", buttonValue);
         if (buttonValue >= 0 && buttonValue <= 9) {
             setResult(handleNumberKeyPressed(result, buttonValue));
         } else if (buttonValue === "DEL") {
             setResult(handleDelKeyPressed(result));
         } else if (buttonValue === "RESET") {
             setResult(handleResetKeyPressed());
+        } else if (buttonValue === ".") {
+            setResult(handlePeriodKeyPressed(result));
         }
         console.log(
             result.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")

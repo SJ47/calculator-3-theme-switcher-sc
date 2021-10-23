@@ -10,7 +10,10 @@ import {
     handleResetKeyPressed,
     handleNumberKeyPressed,
     handlePeriodKeyPressed,
+    calculateNumbers,
 } from "../utils/KeyPressFunctions";
+import { calculateResult } from "../utils/Calculations";
+import { StyledResult } from "../components/result/Result.styled";
 
 const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -18,24 +21,59 @@ const CalculatorContainer = () => {
     const [theme, setTheme] = useState(
         darkModeQuery.matches ? darkTheme : lightTheme
     );
-    const [inputNumber, setInputNumber] = useState(0);
-    const [operator, setOperator] = useState(null);
-    const [preOperatorNumber, setPreOperatorNumber] = useState(0);
-    const [postOperatorNnumber, setPostOperatorNnumber] = useState(0);
-    const [result, setResult] = useState("0");
+    const [currentInput, setCurrentInput] = useState("");
+    const [runningTotal, setRunningTotal] = useState(0);
+    const [calcStack, setCalcStack] = useState([]);
 
     // calculator functions
     const handleButtonClick = (buttonValue) => {
         if (buttonValue >= 0 && buttonValue <= 9) {
-            setResult(handleNumberKeyPressed(result, buttonValue));
+            setCurrentInput(handleNumberKeyPressed(currentInput, buttonValue));
         } else if (buttonValue === "DEL" || buttonValue === "Backspace") {
-            setResult(handleDelKeyPressed(result));
+            if (
+                currentInput &&
+                setCurrentInput(handleDelKeyPressed(currentInput, runningTotal))
+            );
         } else if (buttonValue === "RESET") {
-            setResult(handleResetKeyPressed());
+            setCurrentInput(handleResetKeyPressed());
+            setOperator(null);
+            setPreOperatorNumber(0);
         } else if (buttonValue === ".") {
-            setResult(handlePeriodKeyPressed(result));
+            setCurrentInput(handlePeriodKeyPressed(currentInput));
+
+            // ADD NUMBERS
+        } else if (
+            buttonValue === "+" ||
+            buttonValue === "-" ||
+            buttonValue === "x" ||
+            buttonValue === "/" ||
+            buttonValue === "="
+        ) {
+            // keep history at last 5 operators only
+            console.log("BUTTON: ", buttonValue);
+            let tempCalcStack = calcStack;
+            if (calcStack.length >= 5) {
+                tempCalcStack = calcStack.slice(0, 4);
+            }
+            setCalcStack([buttonValue, ...tempCalcStack]);
+
+            const result = calculateNumbers(
+                currentInput,
+                runningTotal,
+                buttonValue,
+                calcStack
+            );
+            if (result) {
+                setRunningTotal(result);
+                setCurrentInput("");
+            }
         }
     };
+
+    // useEffect(() => {
+    //     // Keep stack limited to last 10 entries only
+    //     console.log("Calcstack prev operator: ", calcStack.length);
+    // }, [calcStack]);
 
     const handleKeyPress = (keyValue) => {
         handleButtonClick(keyValue);
@@ -62,7 +100,11 @@ const CalculatorContainer = () => {
         <ThemeProvider theme={theme}>
             <StyledContainer>
                 <Header handleThemeSwitch={handleThemeSwitch} />
-                <Result result={result} handleKeyPress={handleKeyPress} />
+                <Result
+                    currentInput={currentInput}
+                    runningTotal={runningTotal}
+                    handleKeyPress={handleKeyPress}
+                />
                 <Keypad
                     handleButtonClick={handleButtonClick}
                     handleKeyPress={handleKeyPress}

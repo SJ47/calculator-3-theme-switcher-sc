@@ -63,7 +63,7 @@ const CalculatorContainer = () => {
                 buttonValue,
                 calcStack
             );
-            if (result) {
+            if (result || result === 0) {
                 setRunningTotal(result);
                 setCurrentInput("");
             }

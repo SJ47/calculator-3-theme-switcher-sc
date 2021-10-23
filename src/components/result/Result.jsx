@@ -1,14 +1,16 @@
 import React from "react";
 import { StyledResult } from "./Result.styled";
 
-const Result = ({ result, handleKeyPress }) => {
+const Result = ({ currentInput, runningTotal, handleKeyPress }) => {
     return (
         <>
             <StyledResult
                 type="text"
-                value={result}
+                value={currentInput}
+                placeholder={runningTotal}
                 onKeyDownCapture={(event) => handleKeyPress(event.key)}
                 readOnly
+                autoFocus
             ></StyledResult>
         </>
     );

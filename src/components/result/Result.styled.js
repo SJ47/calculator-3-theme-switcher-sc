@@ -13,6 +13,11 @@ export const StyledResult = styled.input`
     margin: 1em .5em .5em .5em;
     border: 0;
 
+    &::placeholder {
+        color: ${(props => props.theme.colors.textResult)};
+        opacity: 1; 
+}
+
     @media (min-width: 776px) {
         margin-bottom: .3em;
         margin-top: .9em;

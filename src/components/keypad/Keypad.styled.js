@@ -12,6 +12,7 @@ export const StyledKeypadContainer = styled.div`
     grid-template-rows: 75px 75px 75px 75px 75px;
     gap: .5em;
     text-align: center;
+    justify-content: center;
 
     @media (min-width: 776px) {
         width: 520px;

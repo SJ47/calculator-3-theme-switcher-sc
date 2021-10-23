@@ -12,8 +12,6 @@ import {
     handlePeriodKeyPressed,
     calculateNumbers,
 } from "../utils/KeyPressFunctions";
-import { calculateResult } from "../utils/Calculations";
-import { StyledResult } from "../components/result/Result.styled";
 
 const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -27,7 +25,7 @@ const CalculatorContainer = () => {
 
     // calculator functions
     const handleButtonClick = (buttonValue) => {
-        if (buttonValue >= 0 && buttonValue <= 9) {
+        if (buttonValue >= 0 && buttonValue <= 9 && calcStack[0] !== "=") {
             setCurrentInput(handleNumberKeyPressed(currentInput, buttonValue));
         } else if (buttonValue === "DEL" || buttonValue === "Backspace") {
             if (
@@ -38,10 +36,8 @@ const CalculatorContainer = () => {
             setCurrentInput(handleResetKeyPressed());
             setOperator(null);
             setPreOperatorNumber(0);
-        } else if (buttonValue === ".") {
+        } else if (buttonValue === "." && calcStack[0] !== "=") {
             setCurrentInput(handlePeriodKeyPressed(currentInput));
-
-            // ADD NUMBERS
         } else if (
             buttonValue === "+" ||
             buttonValue === "-" ||
@@ -49,14 +45,11 @@ const CalculatorContainer = () => {
             buttonValue === "/" ||
             buttonValue === "="
         ) {
-            // keep history at last 5 operators only
-            console.log("BUTTON: ", buttonValue);
-            let tempCalcStack = calcStack;
-            if (calcStack.length >= 5) {
-                tempCalcStack = calcStack.slice(0, 4);
-            }
+            // keep history of last 5 operators only
+            const tempCalcStack = calcStack.slice(0, 4);
             setCalcStack([buttonValue, ...tempCalcStack]);
 
+            // Perform calculation of numbers
             const result = calculateNumbers(
                 currentInput,
                 runningTotal,
@@ -64,16 +57,15 @@ const CalculatorContainer = () => {
                 calcStack
             );
             if (result || result === 0) {
-                setRunningTotal(result);
+                if (buttonValue === "-" && calcStack.length === 0) {
+                    setRunningTotal(Math.abs(result));
+                } else {
+                    setRunningTotal(result);
+                }
                 setCurrentInput("");
             }
         }
     };
-
-    // useEffect(() => {
-    //     // Keep stack limited to last 10 entries only
-    //     console.log("Calcstack prev operator: ", calcStack.length);
-    // }, [calcStack]);
 
     const handleKeyPress = (keyValue) => {
         handleButtonClick(keyValue);

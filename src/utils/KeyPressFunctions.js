@@ -30,18 +30,16 @@ export const handlePeriodKeyPressed = (currentInput) => {
     return currentInput.includes(".") ? currentInput : currentInput + ".";
 }
 
-// Add two numbers
+// Perform calculation on two numbers based on operator value
 export const calculateNumbers = (currentInput, runningTotal, buttonValue, calcStack) => {
 
     if (currentInput === "") return null;
-    // if (calcStack.length === 0 || calcStack.length === 1) return null;
-
+    // if (calcStack.length === 1) {
+    // runningTotal = currentInput;
+    // }
     const currentInputCommasRemoved = removeCommas(currentInput);
     const currentOperator = calcStack.length < 1 ? buttonValue : calcStack[0]
-    console.log("Calcstack length: ", calcStack.length);
-    // const currentOperator = buttonValue;
 
-    console.log(currentOperator)
     let result;
     switch (currentOperator) {
         case "+" || "=":
@@ -50,66 +48,23 @@ export const calculateNumbers = (currentInput, runningTotal, buttonValue, calcSt
             break;
         case "-" || "=":
             result = runningTotal - parseFloat(currentInputCommasRemoved);
-            // if (result >= 0) {
-            // result = Math.abs(result);
-            // }
             break;
         case "x" || "=":
+            if (calcStack.length === 0) {
+                runningTotal = 1;
+            }
             result = runningTotal * parseFloat(currentInputCommasRemoved);
             break;
         case "/" || "=":
+            if (calcStack.length === 0) {
+                result = currentInput;
+                break;
+            }
             result = runningTotal / parseFloat(currentInputCommasRemoved);
             break;
         default:
             result = runningTotal
             break;
     }
-    // const result = runningTotal + parseFloat(currentInputCommasRemoved);
-    // console.log("REsult", result)
     return result;
 }
-
-
-// Add two numbers
-// export const addNumbers = (currentInput, runningTotal, operator) => {
-
-//     if (currentInput === "") return null;
-
-//     const currentInputCommasRemoved = removeCommas(currentInput);
-//     const result = runningTotal + parseFloat(currentInputCommasRemoved);
-//     return result;
-// }
-
-// Subtract two numbers
-// export const subtractNumbers = (currentInput, runningTotal, operator) => {
-
-//     if (currentInput === "") return null;
-
-//     const currentInputCommasRemoved = removeCommas(currentInput);
-//     console.log("running total: ", runningTotal);
-//     const result = runningTotal - parseFloat(currentInputCommasRemoved);
-//     console.log("Result: ", result)
-//     return result;
-// }
-
-
-// export const calculateTwoNumbers = (currentInput, runningTotal, operator) => {
-//     const currentInputCommasRemoved = removeCommas(currentInput);
-
-//     let result = 0;
-//     switch (operator) {
-//         case "+":
-//             result = runningTotal + parseFloat(currentInputCommasRemoved);
-//             break;
-//         case "-":
-//             result = runningTotal - parseFloat(currentInputCommasRemoved);
-//             break;
-//         // case "x":
-//         //     result = runningTotal * parseFloat(currentInputCommasRemoved);
-//         //     break;
-//         default:
-//             break;
-//     }
-//     // return parseFloat(currentInputCommasRemoved) + runningTotal;
-//     return result;
-// }

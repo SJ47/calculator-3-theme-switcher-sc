@@ -2,7 +2,9 @@ import React from "react";
 import { StyledResult } from "./Result.styled";
 
 const Result = ({ currentInput, runningTotal, handleKeyPress }) => {
-    const formattedRunningTotal = runningTotal.toLocaleString();
+    const formattedRunningTotal = runningTotal.toLocaleString(undefined, {
+        maximumFractionDigits: 20,
+    });
 
     return (
         <>

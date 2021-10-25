@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Live Site URL: [Add live site URL here](https://calculator.scottjohnston.dev)
 
 ## My process
 
@@ -48,7 +48,12 @@ Users should be able to:
 
 ### What I learned
 
-More exposure to styled components in React along with additional learning using Grid. Implementing a theme switch component for multiple themes. Saving data locally based on theme preferences.
+-   More exposure to styled components in React
+-   Additional learning using Grid
+-   How to implement a theme switch component for more than two themes
+-   Saving data locally based on theme preferences
+-   Implementing `prefers-color-scheme` to match users system preferences if no locally saved theme found
+-   Breaking down functions into single areas of responsibilities
 
 ### Continued development
 

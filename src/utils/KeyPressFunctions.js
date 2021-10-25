@@ -2,11 +2,6 @@ function removeCommas(num) {
     return num.replace(/,/g, '');
 }
 
-// RESET key pressed
-export const handleResetKeyPressed = () => {
-    return "0";
-}
-
 // DEL key pressed
 export const handleDelKeyPressed = (currentInput, runningTotal) => {
     // !currentInput && runningTotal;
@@ -34,9 +29,7 @@ export const handlePeriodKeyPressed = (currentInput) => {
 export const calculateNumbers = (currentInput, runningTotal, buttonValue, calcStack) => {
 
     if (currentInput === "") return null;
-    // if (calcStack.length === 1) {
-    // runningTotal = currentInput;
-    // }
+
     const currentInputCommasRemoved = removeCommas(currentInput);
     const currentOperator = calcStack.length < 1 ? buttonValue : calcStack[0]
 

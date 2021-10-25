@@ -7,7 +7,6 @@ import { StyledContainer } from "./CalculatorContainer.styled";
 import { darkTheme, lightTheme, purpleTheme } from "./MyThemes";
 import {
     handleDelKeyPressed,
-    handleResetKeyPressed,
     handleNumberKeyPressed,
     handlePeriodKeyPressed,
     calculateNumbers,
@@ -33,9 +32,9 @@ const CalculatorContainer = () => {
                 setCurrentInput(handleDelKeyPressed(currentInput, runningTotal))
             );
         } else if (buttonValue === "RESET") {
-            setCurrentInput(handleResetKeyPressed());
-            setOperator(null);
-            setPreOperatorNumber(0);
+            setCurrentInput("");
+            setRunningTotal(0);
+            setCalcStack([]);
         } else if (buttonValue === "." && calcStack[0] !== "=") {
             setCurrentInput(handlePeriodKeyPressed(currentInput));
         } else if (

@@ -1,4 +1,5 @@
 export const darkTheme = {
+    name: "darkTheme",
     colors: {
         bgMain: "var(--color-dt-main-bg)",
         bgToggle: "var(--color-dt-toggle-bg)",
@@ -19,6 +20,8 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
+    name: "lightTheme",
+
     colors: {
         bgMain: "var(--color-lt-main-bg)",
         bgToggle: "var(--color-lt-toggle-bg)",
@@ -39,6 +42,7 @@ export const lightTheme = {
 };
 
 export const purpleTheme = {
+    name: "purpleTheme",
     colors: {
         bgMain: "var(--color-purple-main-bg)",
         bgToggle: "var(--color-purple-toggle-bg)",

@@ -12,12 +12,8 @@ import {
     calculateNumbers,
 } from "../utils/KeyPressFunctions";
 
-const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
 const CalculatorContainer = () => {
-    const [theme, setTheme] = useState(
-        darkModeQuery.matches ? darkTheme : lightTheme
-    );
+    const [theme, setTheme] = useState(lightTheme);
     const [currentInput, setCurrentInput] = useState("");
     const [runningTotal, setRunningTotal] = useState(0);
     const [calcStack, setCalcStack] = useState([]);
@@ -81,11 +77,27 @@ const CalculatorContainer = () => {
         );
     };
 
+    // Check for existing calc theme saved in browser.  If not found, default to system user preferred theme
     useEffect(() => {
-        darkModeQuery.addEventListener("change", (event) => {
-            setTheme(event.matches ? darkTheme : lightTheme);
-        });
-    });
+        if (localStorage.calcTheme === "darkTheme") {
+            setTheme(darkTheme);
+        } else if (localStorage.calcTheme === "lightTheme") {
+            setTheme(lightTheme);
+        } else if (localStorage.calcTheme === "purpleTheme") {
+            setTheme(purpleTheme);
+        } else {
+            // No existing calculator theme exists, so default to user preferred system theme
+            const darkModeQuery = window.matchMedia(
+                "(prefers-color-scheme: dark)"
+            );
+            setTheme(darkModeQuery.matches ? darkTheme : lightTheme);
+        }
+    }, []);
+
+    // Any time theme changes, write the theme value to localstorage
+    useEffect(() => {
+        localStorage.setItem("calcTheme", theme.name);
+    }, [theme]);
 
     return (
         <ThemeProvider theme={theme}>

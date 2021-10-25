@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://calculator.scottjohnston.dev)
+-   Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/calculator-with-3-theme-switcher-save-themes-and-user-preferred-theme-fxREQfkum)
+-   Live Site URL: [Calculator with 3 Theme Switcher](https://calculator.scottjohnston.dev)
 
 ## My process
 

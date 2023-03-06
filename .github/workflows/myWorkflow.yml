@@ -1,13 +1,31 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+# name: learn-github-actions
+# run-name: ${{ github.actor }} is learning GitHub Actions
+# on: [push]
+# jobs:
+#   check-bats-version:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: '18'
+#       - run: npm install -g bats
+#       - run: bats -v
+
+name: 'Netlify Preview Deploy'
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
+
 jobs:
-  check-bats-version:
+  deploy:
+    name: 'Deploy'
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: jsmrcaga/action-netlify-deploy@master
         with:
-          node-version: '18'
-      - run: npm install -g bats
-      - run: bats -v
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

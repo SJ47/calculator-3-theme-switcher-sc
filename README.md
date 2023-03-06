@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4995c5f8-e773-4cf3-afec-a5fcbf1969a6/deploy-status)](https://app.netlify.com/sites/optimistic-austin-b16c11/deploys)
 
+[![Netlify Preview Deploy](https://github.com/SJ47/calculator-3-theme-switcher-sc/actions/workflows/myWorkflow.yml/badge.svg)](https://github.com/SJ47/calculator-3-theme-switcher-sc/actions/workflows/myWorkflow.yml)
+
 # Frontend Mentor - Calculator app solution
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.

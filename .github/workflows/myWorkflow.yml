@@ -1,5 +1,5 @@
 name: 'Netlify Preview Deploy'
-run-name: ${{ github.actor }} is deploying a preview on Netlify
+run-name: ${{ github.actor }} is Deploying a Preview on Netlify
 on:
   pull_request:
     types: ['opened', 'edited', 'synchronize']
@@ -13,3 +13,4 @@ jobs:
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          build_directory: "dist"

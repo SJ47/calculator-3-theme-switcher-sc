@@ -61,7 +61,7 @@ Users should be able to:
 
 ### Continued development
 
-I plan to continue getting more familiar and experience with Styled Components along with Grid. I also need to refactor a number of areas.
+I plan to continue getting more familiar and experience with Styled Components along with Grid. I also need to refactor a number of areas and introduce some workflow.
 
 ## Author
 

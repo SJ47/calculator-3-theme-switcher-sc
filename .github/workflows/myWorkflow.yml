@@ -15,6 +15,7 @@ jobs:
         with:
           build: npm run build
           start: npm run dev
+          command-prefix: 'percy exec -- npx'
 
   deploy:
     name: 'Deploy'

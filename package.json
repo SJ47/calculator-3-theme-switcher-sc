@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test:percy": "percy exec -- cypress run"
   },
   "dependencies": {
     "cypress": "^12.9.0",

@@ -3,15 +3,20 @@ run-name: ${{ github.actor }} is Deploying a Preview on Netlify
 on:
   pull_request:
     types: ['opened', 'edited', 'synchronize']
+    
 jobs:
   cypress-run:
-    name: 'E2E Cypress tests'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        with:
+          build: npm run build
+          start: npm start
 
   deploy:
     name: 'Deploy'

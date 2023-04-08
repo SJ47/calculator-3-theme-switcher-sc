@@ -101,7 +101,7 @@ const CalculatorContainer = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <StyledContainer>
+            <StyledContainer data-cy="background-color">
                 <Header handleThemeSwitch={handleThemeSwitch} />
                 <Result
                     currentInput={currentInput}

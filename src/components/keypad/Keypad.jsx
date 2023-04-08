@@ -83,6 +83,8 @@ const Keypad = ({ handleButtonClick, handleKeyPress }) => {
     const styledKeypadKeys = keypadKeys.map((keypadKey) => {
         return (
             <StyledKey
+                // data-cy="key"  // For cypress testing only
+                data-cy={`key${keypadKey.value}`}  // For cypress testing only
                 onClick={(event) => handleButtonClick(event.target.innerHTML)}
                 key={keypadKey.id}
                 keyValue={keypadKey.value}

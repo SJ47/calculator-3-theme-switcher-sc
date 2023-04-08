@@ -15,6 +15,7 @@ const Result = ({ currentInput, runningTotal, handleKeyPress }) => {
                 onKeyDownCapture={(event) => handleKeyPress(event.key)}
                 readOnly
                 autoFocus
+                data-cy="result"
             ></StyledResult>
         </>
     );

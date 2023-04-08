@@ -5,7 +5,7 @@ describe("calculator", () => {
     cy.visit("/")
   })
   it("should display the calculator", () => {
-    cy.percySnapshot("Homepage loaded")
+    cy.percySnapshot("Homepage loaded")  // Percy snapshot
     cy.contains("calc")  // Check it has logo calc
   })
 

@@ -1,5 +1,8 @@
-name: End-to-end tests
-on: push
+name: 'Run E2E Tests and Netlify Preview Deploy'
+run-name: ${{ github.actor }} is Deploying a Preview on Netlify
+on:
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -11,12 +14,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
-name: 'Netlify Preview Deploy'
-run-name: ${{ github.actor }} is Deploying a Preview on Netlify
-on:
-  pull_request:
-    types: ['opened', 'edited', 'synchronize']
-jobs:
   deploy:
     name: 'Deploy'
     runs-on: ubuntu-latest

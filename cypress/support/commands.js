@@ -14,7 +14,6 @@
 //
 //
 // -- This is a child command --
-import "@percy/cypress"
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
 //

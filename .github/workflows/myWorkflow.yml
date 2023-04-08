@@ -5,6 +5,7 @@ on:
     types: ['opened', 'edited', 'synchronize']
 jobs:
   cypress-run:
+    name: 'E2E Cypress tests'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

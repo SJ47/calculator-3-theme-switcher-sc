@@ -19,8 +19,8 @@ const Switch = ({ handleThemeSwitch }) => {
                 <div>3</div>
             </StyledThemeNumbers>
 
-            <StyledSwitchLabel>
-                <StyledSwitchInput onClick={handleThemeSwitch} type="checkbox" />
+            <StyledSwitchLabel data-cy="theme-input">
+                <StyledSwitchInput  onClick={handleThemeSwitch} type="checkbox" />
                 <StyledSlider />
             </StyledSwitchLabel>
         </StyledSwitch>

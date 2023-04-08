@@ -5,7 +5,7 @@ import { StyledHeader, StyledLogo, StyledSwitchContainer } from "./Header.styled
 const Header = ({ handleThemeSwitch }) => {
     return (
         <StyledHeader>
-            <StyledLogo>calc</StyledLogo>
+            <StyledLogo>calculator</StyledLogo>
             <StyledSwitchContainer>
                 <Switch handleThemeSwitch={handleThemeSwitch} />
             </StyledSwitchContainer>
